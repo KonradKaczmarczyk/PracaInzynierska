@@ -19,5 +19,4 @@ public class BDConnect {
 
         return conn;
     }
-
 }
