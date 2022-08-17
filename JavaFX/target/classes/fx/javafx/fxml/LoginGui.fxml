@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.javafx.Controllers.LoginGuiController">
+    <left>
+        <AnchorPane prefHeight="500.0" prefWidth="436.0" style="-fx-background-color: #18a69b;" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="176.0" fitWidth="245.0" layoutX="86.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                <effect>
+                    <Reflection />
+                </effect>
+                <Image url="@../img/carton-g7957fbf1c_640.png" />
+            </ImageView>
+            <Text fill="#fffcfc" layoutX="14.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made by Konrad Kaczmarczyk" />
+            <Button fx:id="openAdmin" layoutX="280.0" layoutY="429.0" mnemonicParsing="false" onAction="#setOpenAdmin" pickOnBounds="true" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #6b716f;" text="PANEL ADMINA" />
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="500.0" prefWidth="433.0" BorderPane.alignment="CENTER">
+            <TextField fx:id="loginTextField" layoutX="127.0" layoutY="250.0" promptText="Login" style="-fx-border-color: #18a69b; -fx-border-width: 0px 0px 4px 0px; -fx-background-color: transparent;" />
+            <PasswordField fx:id="hasloPassField" layoutX="127.0" layoutY="304.0" promptText="Hasło" style="-fx-border-color: #18a69b; -fx-background-color: transparent; -fx-border-width: 0px 0px 4px 0px;" />
+            <FontAwesomeIconView fill="#6b716f" glyphName="USERS" layoutX="90.0" layoutY="271.0" size="25.0" text="" wrappingWidth="7.8499755859375" />
+            <FontAwesomeIconView fill="#6b716f" glyphName="LOCK" layoutX="94.0" layoutY="326.0" size="30" text="" />
+            <Button fx:id="loginButtonGui" layoutX="203.0" layoutY="385.0" mnemonicParsing="false" onAction="#loginButtonGuiOnAction" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #18a69b;" text="ZALOGUJ SIĘ" />
+            <FontAwesomeIconView fill="#6b716f" glyphName="SHIELD" layoutX="167.0" layoutY="115.0" size="75" text="" />
+            <Text fill="#18a69b" layoutX="89.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PANEL LOGOWANIA">
+                <font>
+                    <Font size="23.0" />
+                </font>
+            </Text>
+            <Button fx:id="exitButton" layoutX="298.0" layoutY="16.0" minWidth="15.0" mnemonicParsing="false" onAction="#setExitButton" prefHeight="25.0" prefWidth="45.0" style="-fx-background-color: transparent; -fx-border-color: #18a69b;">
+                <graphic>
+                    <FontAwesomeIconView fill="#6b716f" glyphName="CLOSE" size="18" />
+                </graphic>
+            </Button>
+         <Label fx:id="loginGUIMessageLabel" alignment="CENTER" layoutX="76.0" layoutY="344.0" prefHeight="26.0" prefWidth="234.0" textFill="#e10a0a">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+        </AnchorPane>
+    </center>
+</BorderPane>
