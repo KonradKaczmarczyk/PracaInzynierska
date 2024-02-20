@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instrukcja</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="instrukcja-instalacji-programu">Instrukcja instalacji programu</h1>
+<p>Instrukcja została stworzona za pomocą <strong><a href="http://stackedit.io">stackedit.io</a></strong>, na potrzeby przedstawienia jak na własnym komputerze uruchomić aplikację, aby poprawnie działała.<br>
+Aplikację można przetestować na dwóch różnych bazach, co zostanie przedstawione w poniższych punktach.</p>
+<h1 id="aplikacje-pliki-itp.">Aplikacje, pliki itp.</h1>
+<p>Na początku należy zainstalować wszystkie poniższe aplikacje.<br>
+<strong>Instalacja JDK</strong> = <a href="https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jdk17.0.4-win_x64.msi">https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jdk17.0.4-win_x64.msi</a><br>
+<strong>Instalacja SGT 1.70</strong> = <a href="https://ftp.insert.com.pl/pub/aktualizacje/InsERT_GT/InsERT_GT_1_70.exe">https://ftp.insert.com.pl/pub/aktualizacje/InsERT_GT/InsERT_GT_1_70.exe</a><br>
+<strong>Instalacja SSMS</strong> = <a href="https://aka.ms/ssmsfullsetup">https://aka.ms/ssmsfullsetup</a><br>
+Pliki znajdujące się na płycie w folderze “<strong>Bazy danych do aplikacji</strong>” oraz aplikacja “<strong>Aplikacja Praca Inżynierska.jar</strong>”</p>
+<h2 id="instalacja-z-gotową-bazą-programu-subiekt-gt">Instalacja z gotową bazą programu Subiekt GT</h2>
+<p>Na początku należy zaznaczyć iż ze względu na wersję trial programu Subiekt GT, dla gotowej bazy licencja zakończyła się, jednakże nie stoi to na przeszkodzie aby sprawdzić aplikacje z podanymi przykładami utworzonymi wcześniej w programie Subiekt GT.<br>
+Jest to zalecana forma przetestowania ze względu na już wypełnione dane w programie Subiekt GT.</p>
+<ol>
+<li>Włączenie aplikacji SSMS (SQL Server Management Studio), wybrać SQL Server Authentication i zalogować się.<br>
+Domyślnie po instalacji Subiekta GT, login to “<strong>sa</strong>” i hasło jest puste. Tak też się logujemy.</li>
+<li>Teraz należy przywrócić bazę danych. Klikamy prawym na “Databases”, następnie na “Restore Database…”. W rubryce “Source” zaznaczamy “Device” i następnie przycisk z boku. Klikamy przycisk “Add”, następnie w pasku na dole wybieramy “All Files(*)” i po lewej stronie wybieramy lokalizację gdzie umieściliśmy nasze bazy danych (UsersForApp oraz Sklep). Przywracamy jedną. Po udanym odzyskaniu w taki sam sposób przywracamy drugą bazę.</li>
+<li>Po udanym przywracaniu należy włączyć aplikację “SQL Server 2019 Configuration Manager”, rozwinąć zakładkę “SQL Server Network Configuration’”, klinąć w “Protocols for INSERTGT”, następnie kliknąć dwa razy w “TCP/IP”, wybrać zakładkę IP Addresses i na samym końcu w “IPALL” w rubryce “TCP Port” wpisać 1433.</li>
+<li>Teraz należy zrestartować Serwer SQL. W “SQL Server 2019 Configuration Manager” w pierwszej zakładce tj. “SQL Server Services”, wybieramy “SQL Server (INSERTGT)”. Klikamy na niego prawym i wybieramy restart.</li>
+</ol>
+<h2 id="instalacja-z-nową-bazą-programu-subiekt-gt">Instalacja z nową bazą programu Subiekt GT</h2>
+<ol>
+<li>Włączenie aplikacji SSMS (SQL Server Management Studio), wybrać SQL Server Authentication i zalogować się.<br>
+Domyślnie po instalacji Subiekta GT, login to “sa” i hasło jest puste. Tak też się logujemy.</li>
+<li>Teraz należy przywrócić bazę danych. Klikamy prawym na “Databases”, następnie na “Restore Database…”. W rubryce “Source” zaznaczamy “Device” i następnie przycisk z boku. Klikamy przycisk “Add”, następnie w pasku na dole wybieramy “All Files(*)” i po lewej stronie wybieramy lokalizację gdzie umieściliśmy naszą bazę danych (UsersForApp).</li>
+<li>Po udanym przywracaniu należy włączyć aplikację “SQL Server 2019 Configuration Manager”, rozwinąć zakładkę “SQL Server Network Configuration’”, klinąć w “Protocols for INSERTGT”, następnie kliknąć dwa razy w “TCP/IP”, wybrać zakładkę IP Addresses i na samym końcu w “IPALL” w rubryce “TCP Port” wpisać 1433.</li>
+<li>Teraz należy zrestartować Serwer SQL. W “SQL Server 2019 Configuration Manager” w pierwszej zakładce tj. “SQL Server Services”, wybieramy “SQL Server (INSERTGT)”. Klikamy na niego prawym i wybieramy restart.</li>
+<li>Włączyć program Subiekt GT, w polu “Nowy:” należy wpisać “Sklep”. Potem zaznaczamy opcje “Wersja próbna”, klikamy “OK” i następuje tworzenie bazy danych.<br>
+Wszelkie informacje można przeklikać dalej z wyjątkiem NIPu. Tu należy wpisać jakikolwiek losowy, byle by zgadzał się z przepisami czyli 10 cyfr. Gdy już uda się wszystko, pierwsza rzecz którą należy wykonać to dodanie towarów.<br>
+Przechodzimy więc do zakładki “Towary i usługi” znajdującym się na lewym bocznym pasku. Następnie klikamy “Dodaj” i tu w polu symbol należy wpisać liczby np. “123123”, w nazwie wpisać jakąkolwiek nazwę np. “Mleko”. W opisie należy wpisać gdzie ten produkt się znajduję np. “Regał 63”. Tym sposobem stwórzmy co najmniej dwa produkty. Gdy już nam się uda, rozwijamy znajdującą się po lewej stronie “Listę modułów” i wybieramy zamówienia od klientów.<br>
+Klikamy przycisk “Dodaj” i następnie “Dodaj zamówienie”. Żeby było jak najszybciej, klikamy przycisk “Odbiorca” i wybieramy “Wstaw kontrahenta jednorazowego”. W nazwie wpiszmy cokolwiek np. “Konrad Konrad”. Następnie po prawej stronie pomiędzy polami “ZK” gdzie domyślnie wyświetla się (auto)/2022 oraz polami gdzie występują daty należy wpisać numer zamówienia np. “ZK_12345678”.<br>
+Następnie uzupełniamy zamówienie tj. w rubryce “Nazwa” wpisujemy wcześniej stworzone produkty. Następnie na dole zaznaczamy “Rezerwuj stany magazynowe” i klikamy “Zapisz”.</li>
+</ol>
+<h2 id="testowanie-z-gotową-bazą-danych-programu-subiekt-gt">Testowanie z gotową bazą danych programu Subiekt GT</h2>
+<p>Zostały utworzone dwa konta dla testów:</p>
+<ol>
+<li>login: admin<br>
+hasło: admin.123</li>
+<li>drugie konto bez dostępu do panelu administratora<br>
+login: pracownik_1<br>
+hasło: user</li>
+</ol>
+<p>Jeśli poprawnie zainstalowaliśmy całe oprogramowanie oraz uzupełniliśmy dane według instrukcji znajdującej się w “<strong>Instalacja z gotową bazą programu Subiekt GT</strong>”, możemy przejść do testowania aplikacji.<br>
+Włączamy aplikację “Aplikacja Praca Inżynierska” i testujemy.</p>
+<p>Naciśnięcie przycisku “PANEL ADMINA” spowodowuje otwarcie okna do logowania dla administratora. Możemy się zalogować za pomocą pierwszego konta.<br>
+Wyskoczy nam okno gdzie będziemy mogli stworzyć nowego użytkownika, wybierając mu poziom uprawnień, login oraz hasło.<br>
+Po prawej stronie możemy natomiast zmienić hasło dla użytkowników rozwijając listę “login”, następnie wybierając interesującego nas użytkownika i wpisać nowe hasło. Przycisk cofania znajdujący się na górze spowoduje cofnięcie do głównego panelu. Przycisk wyłączenia spowoduje zamknięcie aplikacji.<br>
+W głównym panelu zalogujmy się obojętnie jakim kontem. Po zalogowaniu się przechodzimy do okna gdzie możemy pracować. Na samej górze w polu należy podać nr zamówienia. Tym samym możemy wpisać numer zamówienia z gotowej bazy którą przygotowałem. Stworzyłem trzy zlecenia:</p>
+<ol>
+<li>“B_0304165766”</li>
+<li>“B_0105204097”</li>
+<li>“B_2904174679”</li>
+</ol>
+<p>Wpiszmy więc któreś z tych zleceń. Po wpisaniu zamówienia i wciśnięcia przycisku enter, zostanie zablokowane pole do wpisania zamówienia i automatycznie przeskoczy do pola, gdzie należy zeskanować/wpisać numery towarów występujące w zamówieniu czyli np. “315096”<br>
+Klikamy enter, numer towaru przeskoczy do okna po prawej stronie i dopóki nie zeskanujemy wszystkich towarów, nie będzie można zakończyć pakowania paczki. Gdy to już nastąpi, wyświetli nam się informacja o tym, iż wszystkie towary zostały zeskanowane. Klikamy przycisk “Rozumiem” i tym samym odblokuje się przycisk do zakończenia pakowania. Po jego kliknięciu możemy dalej testować nasz program innymi zamówieniami.</p>
+<h2 id="testowanie-z-nową-bazą-programu-subiekt-gt">Testowanie z nową bazą programu Subiekt GT</h2>
+<p>Zostały utworzone dwa konta dla testów:</p>
+<ol>
+<li>login: admin<br>
+hasło: admin.123</li>
+<li>drugie konto bez dostępu do panelu administratora<br>
+login: pracownik_1<br>
+hasło: user</li>
+</ol>
+<p>Jeśli poprawnie zainstalowaliśmy całe oprogramowanie oraz uzupełniliśmy dane według instrukcji znajdującej się w “<strong>Instalacja z nową bazą programu Subiekt GT</strong>”, możemy przejść do testowania aplikacji.<br>
+Włączamy aplikację “Aplikacja Praca Inżynierska” i testujemy.</p>
+<p>Naciśnięcie przycisku “PANEL ADMINA” spowodowuje otwarcie okna do logowania dla administratora. Możemy się zalogować za pomocą pierwszego konta.<br>
+Wyskoczy nam okno gdzie będziemy mogli stworzyć nowego użytkownika, wybierając mu poziom uprawnień, login oraz hasło.<br>
+Po prawej stronie możemy natomiast zmienić hasło dla użytkowników rozwijając listę “login”, następnie wybierając interesującego nas użytkownika i wpisać nowe hasło. Przycisk cofania znajdujący się na górze spowoduje cofnięcie do głównego panelu. Przycisk wyłączenia spowoduje zamknięcie aplikacji.<br>
+W głównym panelu zalogujmy się obojętnie jakim kontem. Po zalogowaniu się przechodzimy do okna gdzie możemy pracować. Na samej górze w polu należy podać nr zamówienia. Tym samym możemy wpisać stworzony przez nas numer, który stworzyliśmy na etapie instalacji, czyli np. “ZK_12345678”.<br>
+Następnie zostanie zablokowane pole do wpisania zamówienia i automatycznie przeskoczy do pola, gdzie należy zeskanować/wpisać numery towarów występujące w zamówieniu czyli np. “123123”<br>
+Klikamy enter, numer towaru przeskoczy do okna po prawej stronie i dopóki nie zeskanujemy wszystkich towarów, nie będzie można zakończyć pakowania paczki. Gdy to już nastąpi, wyświetli nam się informacja o tym, iż wszystkie towary zostały zeskanowane. Klikamy przycisk “Rozumiem” i tym samym odblokuje się przycisk do zakończenia pakowania. Po jego kliknięciu możemy dalej testować nasz program innymi zamówieniami.</p>
+<h1 id="koniec">Koniec</h1>
+<p>Mam nadzieję, iż przetestowanie udało się pomyślnie. Jeśli jednak tak się nie stało, proszę o kontakt.<br>
+Uczelniany email: <a href="mailto:s6141@horyzont.eu">s6141@horyzont.eu</a><br>
+Prywatny email: <a href="mailto:kondi1201@gmail.com">kondi1201@gmail.com</a> lub <a href="mailto:Konrad_Kaczmarczyk1@outlook.com">Konrad_Kaczmarczyk1@outlook.com</a><br>
+nr telefonu: 663405116</p>
+</div>
+</body>
+
+</html>
